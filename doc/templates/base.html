@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__left-block">
+            <div class="header__logo">
+                <img src="static/icons/logo.svg" alt="Лого">
+            </div>
+            <nav class="header__link">
+                <a href="/about_us" class="header__link">Вакансії</a>
+                <a href="/my_cv" class="header__link">Моє резюме</a>
+            </nav>
+        </div>
+        <div class="header__right-block">
+            <button class="btn btn_white" data-modal>Звя'затися з нами</button>
+        </div>
+    </header>
+    <div class="sidepanel">
+        <div class="sidepanel__text"><span>Социальные сети</span></div>
+        <div class="sidepanel__divider"></div>
+        <a href="#" class="sidepanel__icon">
+            <img src="static/icons/instagram.svg" alt="instagram">
+        </a>
+        <a href="#" class="sidepanel__icon">
+            <img src="static/icons/facebook.svg" alt="facebook">
+        </a>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer">
+        <div class="container">
+            <div class="social">
+                <div class="subtitle">Мы в социальных сетях:</div>
+                <a href="#" class="link">instagram</a>
+                <a href="#" class="link">facebook</a>
+            </div>
+            <div class="pepper">
+                <img src="static/icons/veg.svg" alt="pepper">
+            </div>
+            <div class="call">
+                <div class="subtitle">Или позвоните нам</div>
+                <a href="#" class="link">+380678341034</a>
+                <a href="#" class="link">+380500941356</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
