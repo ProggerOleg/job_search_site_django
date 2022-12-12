@@ -9,33 +9,30 @@
     <header class="header">
         <div class="header__left-block">
             <div class="header__logo">
-                <img src="static/icons/logo.svg" alt="Лого">
+                <a href="/"><img src="static/icons/Logo.png" alt="Лого"></a>
             </div>
             <nav class="header__link">
-                <a href="/about_us" class="header__link">Вакансії</a>
-                <a href="/my_cv" class="header__link">Моє резюме</a>
+                <a href="/vacancies" class="header__link">Вакансії</a>
+                {% if request.user.is_authenticated %}
+                    <a href="/my_cv" class="header__link">Моє резюме</a>
+                {% else %}
+                    <a href="/register" class="header__link">Реєстрація</a>
+                {% endif %}
             </nav>
         </div>
+
         <div class="header__right-block">
-            <button class="btn btn_white" data-modal>Звя'затися з нами</button>
+            <a href="/login" class="header__link">Увійти</a>
+            <a href="#" class="header__link">Сайт для роботодавця</a>
         </div>
     </header>
-    <div class="sidepanel">
-        <div class="sidepanel__text"><span>Социальные сети</span></div>
-        <div class="sidepanel__divider"></div>
-        <a href="#" class="sidepanel__icon">
-            <img src="static/icons/instagram.svg" alt="instagram">
-        </a>
-        <a href="#" class="sidepanel__icon">
-            <img src="static/icons/facebook.svg" alt="facebook">
-        </a>
-    </div>
+
     {% block content %}
     {% endblock %}
     <footer class="footer">
         <div class="container">
             <div class="social">
-                <div class="subtitle">Мы в социальных сетях:</div>
+                <div class="subtitle">Ми в соціальних мережах:</div>
                 <a href="#" class="link">instagram</a>
                 <a href="#" class="link">facebook</a>
             </div>
@@ -43,11 +40,12 @@
                 <img src="static/icons/veg.svg" alt="pepper">
             </div>
             <div class="call">
-                <div class="subtitle">Или позвоните нам</div>
-                <a href="#" class="link">+380678341034</a>
+                <div class="subtitle">Або подзвоніть нам</div>
+                <a href="#" class="link">+380992506701</a>
                 <a href="#" class="link">+380500941356</a>
             </div>
         </div>
     </footer>
+    <script src="static/js/script.js"></script>
 </body>
 </html>

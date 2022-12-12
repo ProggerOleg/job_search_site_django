@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="login">
+    <div class="bgc_y"></div>
+    <div class="bgc_x"></div>
+        <div class="login__dialog">
+            <div class="login__content">
+                <form method="post">
+                  {% csrf_token %}
+                    <div class="login__title">Вхід у ваш аккаунт!</div>
+                    {{ form.username }}
+                    {{ form.password }}
+                    <button class="btn btn_dark btn_min">Увійти</button>
+                    <div class="forgot__password" style="text-align:center;padding-top:10px;"><a href="/register/" style="color:grey;">Забули пароль?</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

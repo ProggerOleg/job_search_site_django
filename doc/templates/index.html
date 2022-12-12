@@ -1,22 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="search__field">
-    <div class="search__jobs"><input placeholder="Яку роботу ви шукаєте?"></div>
-    <div class="search__button"><button><img src="static/icons/search.png" height="30px"></button></div>
+<div>
+        <div class="search__field">
+            <div class="rabota" style="margin-right:60px;font-size: 22px;">
+                <h2>Сайт пошуку роботи №1 в Україні</h2>
+                            Зараз у нас {{vacancies|length}} вакансій</div>
+            <div class="search__jobs"><input placeholder="Яку роботу ви шукаєте?"></div>
+            <div class="search__button"><button><img src="static/icons/search.png" height="30px"></button></div>
+            <div class="example" style="position: relative; top: 50px;right: 447px; width: 500px;">Наприклад бухгалтер, продажі або Укрпошта</div>
+        </div>
 </div>
 
 <div class="divider"></div>
-
-<div class="companies__cards">
-    <h2>Наші партнери:</h2>
-    {% for c in componies %}
-    <div class="compony__card">
-        <img src="{{c.logo}}" width="150px" height="100px">
-    </div>
-    {% endfor %}
+<div class="second__block">
+    <div class="second_section"></div>
+    <div class="third_section"></div>
 </div>
 
 <div class="divider"></div>
+<!--<div class="companies__cards">-->
+<!--    <h2>Наші партнери:</h2>-->
+<!--    {% for c in componies %}-->
+<!--    <div class="compony__card">-->
+<!--        <img src="{{c.logo}}" width="150px" height="100px">-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+<!--<div class="divider"></div>-->
 
 <div class="promotion">
         <div class="bgc_y"></div>
