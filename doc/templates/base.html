@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{title}}</title>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
+<!--Header-->
     <header class="header">
         <div class="header__left-block">
             <div class="header__logo">
@@ -22,13 +23,50 @@
         </div>
 
         <div class="header__right-block">
+            {% if request.user.is_authenticated %}
+<!--            Поменять на dropdown менюшку с надписью профиль или подобное-->
+            <a href="/user_profile" class="header__link">Тарнавчук Олег</a>
+            {% else %}
             <a href="/login" class="header__link">Увійти</a>
+            {% endif %}
             <a href="#" class="header__link">Сайт для роботодавця</a>
         </div>
     </header>
+<!--End of header-->
 
+<!--Content-->
     {% block content %}
     {% endblock %}
+<!--End of content-->
+<!--Pagination-->
+{% if page_obj.has_other_pages %}
+<nav class="list-pages">
+	<ul>
+{% if page_obj.has_previous %}
+		<li class="page-num"><a href="?page={{ page_obj.previous_page_number}}"> < </a></li>
+{% endif %}
+
+
+		{% for p in paginator.page_range %}
+		{% if page_obj.number == p %}
+		<li class="page-num page-num-selected">{{ p }}</li>
+		{% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+		<li class="page-num">
+			<a href="?page={{ p }}">{{ p }}</a>
+		</li>
+		{% endif %}
+		{% endfor %}
+
+{% if page_obj.has_next %}
+		<li class="page-num"><a href="?page={{ page_obj.next_page_number}}"> > </a></li>
+{% endif %}
+	</ul>
+</nav>
+{% endif %}
+
+<!--End of pagination-->
+
+<!--Footer-->
     <footer class="footer">
         <div class="container">
             <div class="social">
@@ -46,6 +84,8 @@
             </div>
         </div>
     </footer>
+<!--End of footer-->
+
     <script src="static/js/script.js"></script>
 </body>
 </html>

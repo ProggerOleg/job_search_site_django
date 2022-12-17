@@ -31,18 +31,28 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # pip install -e hg+http://bitbucket.org/izi/django-admin-tools/#egg=django-admin-tools
     'admin_tools',
     'admin_tools.theming',
     'admin_tools.menu',
     'admin_tools.dashboard',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'doc'
+
+    'doc',
+    # pip install django-crispy-forms
+    # 'crispy_forms'
 ]
+#+
+# pip install twilio
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# LOGIN_URL = '/login/'
+# AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

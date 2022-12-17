@@ -1,8 +1,13 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
-
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
+
+# class CustomUser(AbstractUser):
+#     phonenumber_field =
+#     Загуглить как создать абстрактного юзера + добавить возможность сохранять PDF
+
 class JobList(models.Model):
     job_title = models.CharField(max_length=255, verbose_name='Назва')
     slug = models.SlugField(max_length=255, unique=True, db_index=True)

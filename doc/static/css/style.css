@@ -346,7 +346,9 @@ a {
     background: #ff000052
 }
 .second__block{
-    display:inline;}
+    display:flex;
+}
+
 .second_section{
     background-color:#ffdb0054;
     width: 65%;
@@ -441,16 +443,23 @@ a {
     width: 280px;
     margin: 0 auto
 }
-
+.third__block{
+    height:500px;
+    width: 100%;
+    background-color: blue;
+    margin-bottom: 50px;
+    }
 .content{
+    --bg-opacity: 0.3!important;
     padding-top: 30px;
-    background: #d0d0d029;
+    background-color: rgba(242,245,248,var(--bg-opacity))!important;
     min-height: 1000px;
 }
 .job__list{
     background-color: white;
     padding: 20px;
     margin: 0px 50px 50px 420px;
+    border: 2px solid #e9e9e9;
 }
 
 .job__title{
@@ -459,6 +468,7 @@ a {
     padding: 10px;
 }
 .sidepanel {
+    border: 1px red;
     position:absolute;
     left: 60px;
     top: 150px;
@@ -469,4 +479,42 @@ a {
     flex-direction: column;
     justify-content: space-between;
     align-items: center
+}
+
+.list-pages {
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+.list-pages ul {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+.list-pages ul li {
+	display: inline-block;
+	margin: 0 20px 0 0;
+}
+.list-pages a {
+	color: #000;
+	font-size: 24px;
+	text-decoration: none;
+}
+.list-pages .page-num, .page-num-selected {
+	display: inline-block;
+	width: 60px;
+	height: 44px;
+	padding: 16px 0 0 0;
+	border: 1px solid #d0d0d0;
+	border-radius: 30px;
+}
+.list-pages .page-num:hover {
+	box-shadow: 3px 3px 1px #d0d0d0;
+}
+.list-pages .page-num-selected {
+	border: none;
+	color: #000;
+	font-size: 20px;
+}
+.list-pages .page-num-selected:hover {
+	box-shadow: none;
 }
